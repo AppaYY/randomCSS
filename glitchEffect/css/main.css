@@ -1,0 +1,59 @@
+/* GLITCH ANIMATION */
+@keyframes glitch {
+    0% {
+        transform: translate(0)
+    }
+    20% {
+        transform: translate(-5px, 5px)
+    }
+    40% {
+        transform: translate(-5px, -5px)
+    }
+    60% {
+        transform: translate(5px, 5px)
+    }
+    80% {
+        transform: translate(5px, -5px)
+    }
+    to {
+        transform: translate(0)
+    }
+}
+
+/* MAIN GLITCH CSS */
+.glitch{
+    font-size: 130px;
+    line-height: 1;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: #1d1d1d;
+}
+
+/* DUPLICATES */
+.glitch:before, .glitch:after{
+    display: block;
+    content: 'GLITCH';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: .8;
+}
+
+.glitch:before{
+    color: red;
+    z-index: -1;
+    animation: glitch .4s cubic-bezier(.25, .46, .45, .94) both infinite;
+}
+
+.glitch:after{
+    color: cyan;
+    z-index: -2;
+    animation: glitch .4s cubic-bezier(.25, .46, .45, .94) reverse both infinite;
+}
